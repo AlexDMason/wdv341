@@ -8,13 +8,12 @@
 <body>
 <h1>4-1 PHP Functions</h1>
 <?php
-$discription = "Intro to PHP DMACC web development class";
-$number = "1234567890";
 
 $date=date_create("2023-09-15");
 echo date_format($date,"m/d/Y") . "<br>";
 echo date_format($date, "d/m/Y") . "<br>";
-
+$discription = "              Intro to PHP DMACC web development class             ";
+$number = "1234567890";
 
 
 function writeMsg() {
