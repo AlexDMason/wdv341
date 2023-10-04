@@ -78,12 +78,24 @@
             font-weight:bold;
         }
 
+        .flex-container {
+            display: flex;
+            background-color: DodgerBlue;
+            }
+
+.flex-container > div {
+  background-color: #f1f1f1;
+  margin: 10px;
+  padding: 20px;
+  font-size: 30px;
+}
     </style>
 </head>
 <body>
     <h1>WDV341 Intro PHP</h1>
     <h2>UNit-7 Select data from events table</h2>
     <h3>Event Names</h3>
+    <div class="flex-container">
     <?php 
         while($row = $stmt->fetch() ){      //$row is an associative array
             echo $row["events_id"];
@@ -148,5 +160,6 @@ $result = $stmt->setFetchMode(PDO::FETCH_ASSOC); //the fetch command will return
 $row = $result->fetch( ); //fetch the result into a PHP variable as associative array
 
 ?>
+</div>
 </body>
 </html>
