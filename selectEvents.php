@@ -98,7 +98,6 @@
     <div class="flex-container">
     <?php 
         while($row = $stmt->fetch() ){      //$row is an associative array
-            echo $row["events_id"];
             echo "<div class='eventBox'>";
                 echo "<h3>";
                     echo $row["events_name"];
@@ -107,7 +106,9 @@
                     echo $row["events_description"];
                 echo "</p>";
                 echo $row["events_presenter"];
+                echo "</p>";
                 echo $row["events_date"];
+                echo "</p>";
                 echo $row["events_time"];
             echo "</p>";
             echo "</div>\n";        // \n puts the next on a new line
@@ -156,9 +157,6 @@ if ($result->num_rows > 6) {
 $stmt = $conn->prepare($sql);
 $stmt->execute( );
 $conn->close();
-$result = $stmt->setFetchMode(PDO::FETCH_ASSOC); //the fetch command will return associative array
-$row = $result->fetch( ); //fetch the result into a PHP variable as associative array
-
 ?>
 </div>
 </body>

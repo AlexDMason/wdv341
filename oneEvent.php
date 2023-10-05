@@ -17,7 +17,7 @@
     require 'dbConnect.php';    //copies the content of the dbConnect.php INTO this page       
 
     //2. create the SQL command
-    $sql = "SELECT events_name,events_description FROM wdv341_events WHERE events_id=:recId";     
+    $sql = "SELECT events_name,events_description,events_presenter,events_date,events_time,events_id FROM wdv341_events WHERE events_id=:recId";     
 
     //3. prepare out statement object PDO Prepared Statements
     $stmt = $conn->prepare($sql);   // -> is used instead of . for object->property or object->method
@@ -108,6 +108,12 @@
                     echo "<p><span class='boldEvent'>Event Description:</span> ";
                     echo $row["events_description"];
                 echo "</p>";
+                echo $row["events_presenter"];
+                echo "</p>";
+                echo $row["events_date"];
+                echo "</p>";
+                echo $row["events_time"];
+            echo "</p>";
             echo "</div>\n";        // \n puts the next on a new line
         }
         /*
