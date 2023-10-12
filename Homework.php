@@ -9,5 +9,15 @@
 <body>
     <h1>WDV341 Homework</h1>
     <h2>Alex Mason</h2>
+
+    <p><a href="Git_Intro_Questions.html">WDV341 Homework</a></p>
+    <p><a href="2-1_php_basics.php">2-1 PHP Basics</a></p>
+    <p><a href="PHP_Functions.php">PHP Functions</a></p>
+    <p><a href="inputForm.html">Form Processor</a></p>
+    <p><a href="selectEvents.php">Select Events</a></p>
+    <p><a href="oneEvent.php">One Event</a></p>
+    <p><a href="retail-products.php">Product Formatting</a></p>
+    <p><a href="deliverEventObject.php">PHP-JSON Event Object</a></p>
+    <?php require 'dbConnect.php';?>
 </body>
 </html>
