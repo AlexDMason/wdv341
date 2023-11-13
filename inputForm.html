@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <head>
+    <script src="https://www.google.com/recaptcha/enterprise.js?render=6LfiwqsoAAAAAKi_EXfv4d6tGatz-IFfZifA9Zs5" async defer></script>
+    <script>
+    grecaptcha.enterprise.ready(function() {
+      grecaptcha.enterprise.execute('6Lf9XBMjAAAAAGQoI08F5ku6AkYFVJEkTDLSr5Jf', {action: 'login'}).then(function(token) {
+      });
+  });
+  </script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>WDV101 Intro HTML and CSS</title>
 <action><files>
@@ -18,7 +25,9 @@
 		text-align:center;
 	}
 	
-	
+	.special {
+    display: none;
+  }
 
 
 </style>
@@ -52,7 +61,10 @@
     <label for="email_address">Email Address</label>
     <input type="email" name="email_address" id="email_address"/>
   </p>
-
+<p class="special">
+  <label for="gotcha">gotcha</label>
+  <input type="text" name="gotcha" id="gotcha">
+</p>
   <p>
     <p>Academic Year</p>
     <label><input type="radio" name="year" value="High School Student">High School Student</label>
@@ -83,6 +95,23 @@
   
 </form>
 
+<script>
+  function onSubmit(token) {
+    document.getElementById("button").submit();
+    g-recaptcha-response
+  }
+  
+function onClick(e) {
+  e.preventDefault();
+  grecaptcha.enterprise.ready(async () => {
+    const token = await grecaptcha.enterprise.execute('6LfiwqsoAAAAAKi_EXfv4d6tGatz-IFfZifA9Zs5', {action: 'LOGIN'});
+    // IMPORTANT: The 'token' that results from execute is an encrypted response sent by
+    // reCAPTCHA Enterprise to the end user's browser.
+    // This token must be validated by creating an assessment.
+    // See https://cloud.google.com/recaptcha-enterprise/docs/create-assessment
+  });
+}
+</script>
 <p>&nbsp;</p>
 </body>
 
